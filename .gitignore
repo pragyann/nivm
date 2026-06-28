@@ -1,0 +1,14 @@
+.DS_Store
+.env
+*.log
+
+# Lazy.nvim local development (if applicable)
+lazy/
+
+# Mason (only if installed inside config, uncommon)
+mason/
+
+# Temporary files
+*.swp
+*.swo
+*~
