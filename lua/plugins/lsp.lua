@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('n', 'K', vim.lsp.buf.hover)
         map('n', 'gd', vim.lsp.buf.definition)
         map('n', 'gD', vim.lsp.buf.declaration)
-        map('n', 'gi', vim.lsp.buf.implementation)
+        map('n', 'gI', vim.lsp.buf.implementation)
         map('n', 'go', vim.lsp.buf.type_definition)
         map('n', 'gr', vim.lsp.buf.references)
         map('n', 'gs', vim.lsp.buf.signature_help)
