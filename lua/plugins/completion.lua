@@ -18,6 +18,15 @@ return {
                 completion = {
                     completeopt = "menu,menuone,noinsert",
                 },
+                -- Match completion popups with the rounded LSP hover style.
+                window = {
+                    completion = cmp.config.window.bordered({
+                        border = "rounded",
+                    }),
+                    documentation = cmp.config.window.bordered({
+                        border = "rounded",
+                    }),
+                },
                 -- Expands snippet-style completions returned by LSP servers.
                 snippet = {
                     expand = function(args)
