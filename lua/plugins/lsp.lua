@@ -59,6 +59,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.buf.format({ async = true })
         end)
         map('n', '<F4>', vim.lsp.buf.code_action)
+        map('n', '<leader>ca', vim.lsp.buf.code_action)
 
         if client:supports_method('textDocument/documentHighlight') then
             local highlight_group = vim.api.nvim_create_augroup('my.lsp.highlight', { clear = false })
@@ -170,14 +171,16 @@ vim.lsp.config['ts_ls'] = {
 vim.lsp.config['pyright'] = {
     cmd = { 'pyright-langserver', '--stdio' },
     filetypes = { 'python' },
-    root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git' },
+    root_markers = { 'pyrightconfig.json', 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git' },
     capabilities = caps,
     settings = {
         python = {
             analysis = {
                 typeCheckingMode = 'basic',
                 autoSearchPaths = true,
+                autoImportCompletions = true,
                 useLibraryCodeForTypes = true,
+                diagnosticMode = 'workspace',
             },
         },
     },
