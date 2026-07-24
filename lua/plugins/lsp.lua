@@ -186,11 +186,18 @@ vim.lsp.config['pyright'] = {
     },
 }
 
--- C++
+-- C / C++
 vim.lsp.config['clangd'] = {
     cmd = { 'clangd' },
-    filetypes = { 'cpp' },
-    root_markers = { 'compile_commands.json', '.clangd', 'Makefile', '.git' },
+    filetypes = { 'c', 'cpp' },
+    root_markers = {
+        'compile_commands.json',
+        'compile_flags.txt',
+        '.clangd',
+        'CMakeLists.txt',
+        'Makefile',
+        '.git',
+    },
     capabilities = caps,
 }
 
